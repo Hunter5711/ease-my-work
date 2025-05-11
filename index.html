@@ -1,0 +1,98 @@
+<script src="js/script.js"></script><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Select Button Options App</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Admin Page -->
+    <div id="adminPage" class="page">
+        <h1>Admin Panel</h1>
+        <div class="admin-section">
+            <h2>Edit Page Labels</h2>
+            <select id="editPageSelect" onchange="loadPageLabels()">
+                <option value="1">Page 1</option>
+                <option value="2">Page 2</option>
+                <option value="3">Page 3</option>
+                <option value="4">Page 4</option>
+                <option value="5">Page 5</option>
+            </select>
+            <input type="text" id="pageHeading" placeholder="Page Heading">
+            <input type="text" id="optionA" placeholder="Option A Label">
+            <input type="text" id="optionB" placeholder="Option B Label">
+            <input type="text" id="optionC" placeholder="Option C Label">
+            <button class="next-button" onclick="savePageLabels()">Save Labels</button>
+        </div>
+        <div class="admin-section">
+            <h2>Label Change Logs</h2>
+            <button class="next-button" onclick="downloadLogs()">Download Logs</button>
+        </div>
+        <button class="nav-button" onclick="goToPage(1)">Go to Page 1</button>
+    </div>
+
+    <!-- Existing Pages -->
+    <div id="page1" class="page active">
+        <h1 id="heading1">Page 1</h1>
+        <div class="options">
+            <div class="option-button" data-page="1" data-value="Option A" onclick="toggleOption(1, 'Option A')" id="optionA1">Option A</div>
+            <div class="option-button" data-page="1" data-value="Option B" onclick="toggleOption(1, 'Option B')" id="optionB1">Option B</div>
+            <div class="option-button" data-page="1" data-value="Option C" onclick="toggleOption(1, 'Option C')" id="optionC1">Option C</div>
+        </div>
+        <button class="next-button" onclick="nextPage(1)">Next</button>
+    </div>
+    <div id="page2" class="page">
+        <h1 id="heading2">Page 2</h1>
+        <div class="options">
+            <div class="option-button" data-page="2" data-value="Option A" onclick="toggleOption(2, 'Option A')" id="optionA2">Option A</div>
+            <div class="option-button" data-page="2" data-value="Option B" onclick="toggleOption(2, 'Option B')" id="optionB2">Option B</div>
+            <div class="option-button" data-page="2" data-value="Option C" onclick="toggleOption(2, 'Option C')" id="optionC2">Option C</div>
+        </div>
+        <button class="next-button" onclick="nextPage(2)">Next</button>
+    </div>
+    <div id="page3" class="page">
+        <h1 id="heading3">Page 3</h1>
+        <div class="options">
+            <div class="option-button" data-page="3" data-value="Option A" onclick="toggleOption(3, 'Option A')" id="optionA3">Option A</div>
+            <div class="option-button" data-page="3" data-value="Option B" onclick="toggleOption(3, 'Option B')" id="optionB3">Option B</div>
+            <div class="option-button" data-page="3" data-value="Option C" onclick="toggleOption(3, 'Option C')" id="optionC3">Option C</div>
+        </div>
+        <button class="next-button" onclick="nextPage(3)">Next</button>
+    </div>
+    <div id="page4" class="page">
+        <h1 id="heading4">Page 4</h1>
+        <div class="options">
+            <div class="option-button" data-page="4" data-value="Option A" onclick="toggleOption(4, 'Option A')" id="optionA4">Option A</div>
+            <div class="option-button" data-page="4" data-value="Option B" onclick="toggleOption(4, 'Option B')" id="optionB4">Option B</div>
+            <div class="option-button" data-page="4" data-value="Option C" onclick="toggleOption(4, 'Option C')" id="optionC4">Option C</div>
+        </div>
+        <button class="next-button" onclick="nextPage(4)">Next</button>
+    </div>
+    <div id="page5" class="page">
+        <h1 id="heading5">Page 5</h1>
+        <div class="options">
+            <div class="option-button" data-page="5" data-value="Option A" onclick="toggleOption(5, 'Option A')" id="optionA5">Option A</div>
+            <div class="option-button" data-page="5" data-value="Option B" onclick="toggleOption(5, 'Option B')" id="optionB5">Option B</div>
+            <div class="option-button" data-page="5" data-value="Option C" onclick="toggleOption(5, 'Option C')" id="optionC5">Option C</div>
+        </div>
+        <button class="next-button" onclick="nextPage(5)">Next</button>
+    </div>
+    <div id="summaryPage" class="page">
+        <h1>Summary</h1>
+        <p id="summary"></p>
+        <button class="next-button" onclick="copySummary()">Copy Summary</button>
+        <h2>Edit Selections</h2>
+        <button class="nav-button" onclick="goToPage(1)">Go to Page 1</button>
+        <button class="nav-button" onclick="goToPage(2)">Go to Page 2</button>
+        <button class="nav-button" onclick="goToPage(3)">Go to Page 3</button>
+        <button class="nav-button" onclick="goToPage(4)">Go to Page 4</button>
+        <button class="nav-button" onclick="goToPage(5)">Go to Page 5</button>
+        <br>
+        <button class="nav-button" onclick="goToAdmin()">Go to Admin Panel</button>
+        <button class="reset-button" onclick="resetAll()">Reset All</button>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
